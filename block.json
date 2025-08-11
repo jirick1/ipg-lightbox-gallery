@@ -1,0 +1,21 @@
+{
+  "apiVersion": 2,
+  "name": "ipg/gallery",
+  "title": "IPG Lightbox Gallery",
+  "category": "media",
+  "icon": "format-gallery",
+  "description": "Scoped gallery with lazy-load + lightbox + prev/next.",
+  "attributes": {
+    "items": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "ipg-lightbox-gallery"
+}

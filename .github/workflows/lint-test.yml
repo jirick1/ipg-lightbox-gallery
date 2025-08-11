@@ -7,4 +7,4 @@ on:
 
 jobs:
   LintAndTest:
-    uses: ./github/workflows/lint-test-wf.yaml
+    uses: ./.github/workflows/lint-test-wf.yaml

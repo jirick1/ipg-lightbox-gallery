@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   LintAndTest:
-    uses: ./github/workflows/lint-test-wf.yaml
+    uses: ./.github/workflows/lint-test-wf.yaml
     with:
       php-version: '8.4.3'
       node-version: '24'

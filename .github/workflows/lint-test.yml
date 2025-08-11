@@ -1,0 +1,10 @@
+name: Linting & Testing
+on:
+  push:
+    branches-ignore:
+      - "main"
+      - "staging"
+
+jobs:
+  LintAndTest:
+    uses: ./github/workflows/lint-test-wf.yaml

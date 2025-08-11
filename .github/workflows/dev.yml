@@ -1,0 +1,12 @@
+name: Dev Environment - test
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  LintAndTest:
+    uses: ./github/workflows/lint-test-wf.yaml
+    with:
+      php-version: '8.4.3'
+      node-version: '24'

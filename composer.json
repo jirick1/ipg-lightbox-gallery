@@ -1,0 +1,15 @@
+{
+  "name": "ipg/gallery-test-kit",
+  "description": "Tests for IPG Lightbox Gallery",
+  "require-dev": {
+    "phpunit/phpunit": "^9.6"
+  },
+  "scripts": {
+    "test": [
+      "@phpunit"
+    ],
+    "phpunit": [
+      "vendor/bin/phpunit --colors=always"
+    ]
+  }
+}

@@ -8,3 +8,6 @@ How to use: Install → Activate → add block → click **Add Images**.
 
 # PHP Versions
 - PHP Compatibility: Tested on PHP 7.4, 8.0, 8.1, 8.2.
+
+# Tests
+brew install composer

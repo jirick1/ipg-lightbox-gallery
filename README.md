@@ -11,3 +11,5 @@ How to use: Install → Activate → add block → click **Add Images**.
 
 # Tests
 brew install composer
+nvm install node
+nvm install 24.5.0

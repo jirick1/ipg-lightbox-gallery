@@ -1,0 +1,29 @@
+# Use semantic release to release the branch uisng the config in .releaseerc.json
+name: Release using semantic-release
+on:
+  workflow_call:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+          cache: 'npm'
+
+      - name: Build ZIP
+        run: make clean zip SKIP_TESTS=1 
+      
+      - name: Install semantic-release
+        run: |
+          npm ci --no-fund --no-audit
+      
+      - name: semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release

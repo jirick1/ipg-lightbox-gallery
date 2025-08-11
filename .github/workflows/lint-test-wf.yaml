@@ -1,0 +1,55 @@
+name: lint-test (reusable)
+
+on:
+  workflow_call:
+    inputs:
+      php-version:
+        required: false
+        type: string
+        default: '8.4.3'
+      node-version:
+        required: false
+        type: string
+        default: '24'
+
+jobs:
+  php:
+    name: PHP lint & tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ inputs.php-version }}
+          tools: composer, cs2pr
+      - name: Install Composer deps (if present)
+        if: hashFiles('composer.json') != ''
+        run: composer install --no-interaction --no-progress --prefer-dist
+      - name: PHPCS (if config present)
+        if: hashFiles('**/phpcs.xml*') != ''
+        run: |
+          composer bin phpqa require --dev squizlabs/php_codesniffer:^3 || true
+          vendor/bin/phpcs -q --report=checkstyle | cs2pr || true
+      - name: PHPUnit (if config present)
+        if: hashFiles('phpunit.xml*') != ''
+        run: vendor/bin/phpunit --colors=always
+
+  js:
+    name: JS lint & tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: 'npm'
+      - name: Install deps (if package.json)
+        if: hashFiles('package.json') != ''
+        run: |
+          npm ci --no-fund --no-audit
+      - name: ESLint (if config present)
+        if: hashFiles('.eslintrc*') != ''
+        run: npx eslint . || true
+      - name: Jest (if present)
+        if: hashFiles('package.json') != ''
+        run: npm test -- --color

@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/jirick1/ipg-lightbox-gallery/compare/v1.1.0...v1.2.0) (2025-08-12)
+
+
+### Features
+
+* minified js for small footprint ([#7](https://github.com/jirick1/ipg-lightbox-gallery/issues/7)) ([6882c33](https://github.com/jirick1/ipg-lightbox-gallery/commit/6882c33e7f5a0b6b6d3d165948859731164c851a))
+
 # [1.1.0](https://github.com/jirick1/ipg-lightbox-gallery/compare/v1.0.0...v1.1.0) (2025-08-12)
 
 

@@ -4,9 +4,16 @@
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     ["@semantic-release/changelog", { "changelogFile": "CHANGELOG.md" }],
+    ["@semantic-release/exec", {
+      "prepareCmd": "node scripts/bump-wp-version.js ${nextRelease.version} && make clean zip SKIP_TESTS=1"
+    }],
+    ["@semantic-release/git", {
+      "assets": ["ipg-lightbox-gallery.php", "CHANGELOG.md"],
+      "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+    }],
     ["@semantic-release/github", {
       "labels": ["ci"],
-      "assets": [{ "path": "dist/*.zip", "label": "WordPress Plugin ZIP" }]
+      "assets": [{ "path": "dist/*.zip", "label": "IPG Lightbox Gallery ${nextRelease.version}" }]
     }]
   ]
 }

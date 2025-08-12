@@ -38,7 +38,7 @@ RSYNC_EXCLUDES := \
   --exclude="*.zip" \
   --exclude="Makefile" \
   --exclude="README-TESTS.md" \
-	--exclude="README.md" \
+  --exclude="README.md" \
   --exclude="phpunit.xml" \
   --exclude="phpunit.xml.dist" \
   --exclude="composer.lock" \
@@ -52,9 +52,9 @@ RSYNC_EXCLUDES := \
   --exclude="tests/" \
   --exclude="**/*.test.js" \
   --exclude="**/*.spec.js" \
-	--exclude="vendor" \
-	--exclude=".gitignore" \
-	--exclude="scripts"
+  --exclude="vendor" \
+  --exclude=".gitignore" \
+  --exclude="scripts"
 
 # Required files check (adjust if you rename/add files)
 REQUIRED := $(MAIN_PHP) block.json style.css frontend.js index.js

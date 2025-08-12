@@ -1,4 +1,4 @@
-name: lint-test (reusable)
+name: Lint & Test WF
 
 on:
   workflow_call:

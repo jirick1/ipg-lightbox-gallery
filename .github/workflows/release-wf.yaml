@@ -25,4 +25,4 @@ jobs:
           npm ci --no-fund --no-audit
       
       - name: semantic-release
-        run: GITHUB_TOKEN=${{ secrets.GH_TOKEN }} npx semantic-release
+        run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} npx semantic-release

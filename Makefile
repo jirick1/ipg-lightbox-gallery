@@ -53,7 +53,7 @@ RSYNC_EXCLUDES := \
   --exclude="**/*.test.js" \
   --exclude="**/*.spec.js" \
 	--exclude="vendor" \
-	--exclude=".gitignore"
+	--exclude=".gitignore" \
 	--exclude="scripts"
 
 # Required files check (adjust if you rename/add files)

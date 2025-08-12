@@ -1,0 +1,10 @@
+name: Production Environment - Release
+on:
+  workflow_dispatch:
+    branches:
+      - main
+
+jobs:
+  Release:
+    uses: ./.github/workflows/release-wf.yaml
+    secrets: inherit

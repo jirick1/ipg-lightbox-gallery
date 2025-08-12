@@ -20,6 +20,6 @@ jobs:
       - name: Install dependencies
         run: |
           if [ -f package-lock.json ]; then npm ci --no-fund --no-audit; else npm i --no-fund --no-audit; fi
-      
+
       - name: semantic-release
         run: GITHUB_TOKEN=${{ secrets.GH_TOKEN }} npx semantic-release

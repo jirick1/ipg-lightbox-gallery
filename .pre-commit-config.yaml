@@ -1,0 +1,24 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-merge-conflict
+        stages: [pre-commit]
+        exclude: ^dist/
+      - id: end-of-file-fixer
+        stages: [pre-commit]
+        exclude: ^dist/
+      - id: trailing-whitespace
+        stages: [pre-commit]
+        exclude: ^dist/
+
+  - repo: local
+    hooks:
+      - id: php-fix-and-lint
+        name: PHP (PHPCBF fix → PHPCS lint)
+        entry: scripts/php-fix-and-lint.sh
+        language: system
+        types: [php]
+        pass_filenames: true
+        require_serial: true
+        stages: [pre-commit]

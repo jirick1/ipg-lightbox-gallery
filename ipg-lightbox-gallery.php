@@ -2,7 +2,7 @@
 /**
  * Plugin Name: IPG Lightbox Gallery (Scoped)
  * Description: Self-contained lazy gallery + lightbox (prev/next) Gutenberg block with per-item alt, caption, and SEO text. Scoped CSS/JS to avoid theme conflicts.
- * Version: 1.2.0
+ * Version: 1.3.0
  * Author: IPG Gallery Contributors
  * Author URI: https://github.com/jirick1/ipg-lightbox-gallery/
  * License: MIT-NC

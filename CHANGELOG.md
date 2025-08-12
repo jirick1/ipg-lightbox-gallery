@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/jirick1/ipg-lightbox-gallery/compare/v1.2.0...v1.3.0) (2025-08-12)
+
+
+### Features
+
+* pre-commit + license ([#8](https://github.com/jirick1/ipg-lightbox-gallery/issues/8)) ([c23e35e](https://github.com/jirick1/ipg-lightbox-gallery/commit/c23e35ec471cc631bb609bf4401c79c764afa4e1))
+
 # [1.2.0](https://github.com/jirick1/ipg-lightbox-gallery/compare/v1.1.0...v1.2.0) (2025-08-12)
 
 

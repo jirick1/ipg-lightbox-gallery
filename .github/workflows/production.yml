@@ -8,5 +8,3 @@ jobs:
   Release:
     uses: ./.github/workflows/release-wf.yaml
     secrets: inherit
-    with:
-      branches: main

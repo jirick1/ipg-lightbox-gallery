@@ -13,7 +13,7 @@
     }],
     ["@semantic-release/github", {
       "labels": ["ci"],
-      "assets": [{ "path": "dist/*.zip", "label": "WordPress Plugin ZIP ${nextRelease.version}" }]
+      "assets": [{ "path": "dist/*.zip", "label": "IPG Lightbox Gallery ${nextRelease.version}" }]
     }]
   ]
 }

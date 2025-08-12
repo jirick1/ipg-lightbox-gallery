@@ -38,6 +38,7 @@ RSYNC_EXCLUDES := \
   --exclude="*.zip" \
   --exclude="Makefile" \
   --exclude="README-TESTS.md" \
+	--exclude="README.md" \
   --exclude="phpunit.xml" \
   --exclude="phpunit.xml.dist" \
   --exclude="composer.lock" \
@@ -53,6 +54,7 @@ RSYNC_EXCLUDES := \
   --exclude="**/*.spec.js" \
 	--exclude="vendor" \
 	--exclude=".gitignore"
+	--exclude="scripts"
 
 # Required files check (adjust if you rename/add files)
 REQUIRED := $(MAIN_PHP) block.json style.css frontend.js index.js
@@ -87,6 +89,10 @@ prepare: clean check
 	@mkdir -p "$(BUILD_DIR)"
 	@rsync -a $(RSYNC_EXCLUDES) ./ "$(BUILD_DIR)"/
 	@echo "Prepared build directory: $(BUILD_DIR)"
+	@# Prefer minified assets in the package
+	@cd "$(BUILD_DIR)" && [ -f index.min.js ] && rm -f index.js || true
+	@cd "$(BUILD_DIR)" && [ -f frontend.min.js ] && rm -f frontend.js || true
+	@cd "$(BUILD_DIR)" && [ -f style.min.css ] && rm -f style.css || true
 
 
 test: test-php test-js

@@ -4,7 +4,9 @@
  * Description: Self-contained lazy gallery + lightbox (prev/next) Gutenberg block with per-item alt, caption, and SEO text. Scoped CSS/JS to avoid theme conflicts.
  * Version: 1.2.0
  * Author: IPG Gallery Contributors
- * License: MIT
+ * Author URI: https://github.com/jirick1/ipg-lightbox-gallery/
+ * License: MIT-NC
+ * License URI: https://github.com/jirick1/ipg-lightbox-gallery/blob/main/LICENSE.txt
  * Requires at least: 6.2
  * Tested up to: 6.8.2
  * Requires PHP: 8.4.3

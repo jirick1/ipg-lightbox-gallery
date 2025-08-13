@@ -1,22 +1,26 @@
 #!/usr/bin/env node
 const fs = require('fs');
 
-const file = 'ipg-lightbox-gallery.php';
+const files = [
+  { filename: 'README.md', regex: /^(# .*?\bVersion:\s*)([0-9]+\.[0-9]+\.[0-9]+(?:[-+][0-9A-Za-z.-]+)?)$/m },
+  { filename: 'ipg-lightbox-gallery.php', regex: /^(\s*\*\s*Version:\s*)([0-9A-Za-z.\-+]+)\s*$/m }];
+
 const next = process.argv[2];
 if (!next) { console.error('Missing version arg'); process.exit(1); }
 
-let src = fs.readFileSync(file, 'utf8');
 
-// Replace the WordPress header line: * Version: X.Y.Z
-const out = src.replace(
-  /^(\s*\*\s*Version:\s*)([0-9A-Za-z.\-+]+)\s*$/m,
-  `$1${next}`
-);
+for (const file of files) {
+  console.log(file.filename)
+  let src = fs.readFileSync(file.filename, 'utf8');
 
-if (src === out) {
-  console.error('Version line not updated. Check header format.');
-  process.exit(1);
+  const out = src.replace(file.regex,`$1${next}`
+  );
+
+  if (src === out) {
+    console.error('Version line not updated. Check header format.');
+    process.exit(1);
+  }
+
+  fs.writeFileSync(file.filename, out);
+  console.log(`Updated ${file.filename} to Version: ${next}`);
 }
-
-fs.writeFileSync(file, out);
-console.log(`Updated ${file} to Version: ${next}`);

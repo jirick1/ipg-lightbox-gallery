@@ -1,4 +1,4 @@
-# IPG Lightbox Gallery (Scoped) v1.0.3
+# IPG Lightbox Gallery (Scoped) Version: 1.3.0
 
 - Adds a proper Placeholder when empty + a **Remove Block** button.
 - Uses `useBlockProps` so it’s easier to select/delete the block.
